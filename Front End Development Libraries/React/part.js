@@ -185,90 +185,103 @@ class TypesOfFood extends React.Component {
 // Render a Class Component to the DOM
 class TypesOfFood extends React.Component {
     constructor(props) {
-      super(props);
+        super(props);
     }
     render() {
-      return (
-        <div>
-          <h1>Types of Food:</h1>
-          {/* Change code below this line */}
-          <Fruits />
-          <Vegetables />
-  
-          {/* Change code above this line */}
-        </div>
-      );
+        return (
+            <div>
+                <h1>Types of Food:</h1>
+                {/* Change code below this line */}
+                <Fruits />
+                <Vegetables />
+
+                {/* Change code above this line */}
+            </div>
+        );
     }
-  };
-  
-  // Change code below this line
-  ReactDOM.render(<TypesOfFood />, document.getElementById("challenge-node"))
+};
+
+// Change code below this line
+ReactDOM.render(<TypesOfFood />, document.getElementById("challenge-node"))
 
 // Write a React Component from Scratch
 // Change code below this line
 class MyComponent extends React.Component {
     constructor(props) {
         super(props);
-      }
-      render() {
+    }
+    render() {
         return (
-          <div>
-            <h1>My First React Component!</h1>
-          </div>
+            <div>
+                <h1>My First React Component!</h1>
+            </div>
         )
-      }
-  }
-  ReactDOM.render(<MyComponent />, document.getElementById("challenge-node"))
+    }
+}
+ReactDOM.render(<MyComponent />, document.getElementById("challenge-node"))
 
 // Pass Props to a Stateless Functional Component
 const CurrentDate = (props) => {
     return (
-      <div>
-        { /* Change code below this line */ }
-        <p>The current date is: {props.date}</p>
-        { /* Change code above this line */ }
-      </div>
+        <div>
+            { /* Change code below this line */}
+            <p>The current date is: {props.date}</p>
+            { /* Change code above this line */}
+        </div>
     );
-  };
-  
-  class Calendar extends React.Component {
+};
+
+class Calendar extends React.Component {
     constructor(props) {
-      super(props);
+        super(props);
     }
     render() {
-      return (
-        <div>
-          <h3>What date is it?</h3>
-          { /* Change code below this line */ }
-          <CurrentDate date = {Date()}/>
-          { /* Change code above this line */ }
-        </div>
-      );
+        return (
+            <div>
+                <h3>What date is it?</h3>
+                { /* Change code below this line */}
+                <CurrentDate date={Date()} />
+                { /* Change code above this line */}
+            </div>
+        );
     }
-  };
+};
 
 // Pass an Array as Props
 const List = (props) => {
     { /* Change code below this line */ }
-    return <p></p>
+    return <p>{props.tasks.join(', ')}</p>
     { /* Change code above this line */ }
-  };
-  
-  class ToDo extends React.Component {
+};
+
+class ToDo extends React.Component {
     constructor(props) {
-      super(props);
+        super(props);
     }
     render() {
-      return (
-        <div>
-          <h1>To Do Lists</h1>
-          <h2>Today</h2>
-          { /* Change code below this line */ }
-          <List tasks={["Walk", "Cook", "Bake"]}/>
-          <h2>Tomorrow</h2>
-          <List tasks={["Study", "Code", "Eat"]}/>
-          { /* Change code above this line */ }
-        </div>
-      );
+        return (
+            <div>
+                <h1>To Do Lists</h1>
+                <h2>Today</h2>
+                { /* Change code below this line */}
+                <List tasks={["Walk", "Cook", "Bake"]} />
+                <h2>Tomorrow</h2>
+                <List tasks={["Study", "Code", "Eat"]} />
+                { /* Change code above this line */}
+            </div>
+        );
     }
-  };
+};
+
+// Use Default Props
+const ShoppingCart = (props) => {
+    return (
+        <div>
+            <h1>Shopping Cart Component</h1>
+        </div>
+    )
+};
+// Change code below this line
+ShoppingCart.defaultProps = {
+    items: 0
+};
